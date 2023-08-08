@@ -36,7 +36,7 @@ public class Main {
 
         Cat barsik = new Cat();
         barsik.name ="Barsik";
-        barsik.birthday = date1;
+        barsik.birthday = date2;
         barsik.color="black";
         barsik.isSleep=false;
         printCat(barsik);
@@ -92,6 +92,8 @@ public class Main {
         }
 
     }
+
+
     public static int dateCompare2(int day1, int month1, int year1, int day2, int month2, int year2){
         int date1= year1*10000 + month1*100 + day1;    //01.10.2020   == 2020*10000 + 1*100 + 1
         int date2= year2*10000 + month2*100 + day2;    //01.12.2021    == 2021*10000 + 12*100+1
