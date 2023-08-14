@@ -5,8 +5,6 @@ package homework2_19;
 
  */
 
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         Product[] array= {
@@ -43,14 +41,12 @@ public class Main {
 
 
         System.out.println(p1);
-        p1.temp=10;
         System.out.println(p2);
         System.out.println(p1);
         System.out.println(array[5]);
-        array[0].temp++;
         System.out.println(p2);
         Product.temp=7658765;
-        Product.print();
+//        Product.print();
 
         //StaticDemo obj = new StaticDemo();
         //obj.printMsg("this is message");
