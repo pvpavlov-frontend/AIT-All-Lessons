@@ -9,7 +9,6 @@ public class Singleton2 {
     private Singleton2(){}
 
 
-
     public void print(){
         System.out.println(MESSAGE);
         System.out.println(temp);
