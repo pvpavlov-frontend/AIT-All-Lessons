@@ -15,12 +15,14 @@ class UserTest {
     void setUp() {
         user = new User(email, password);
     }
+
     @Test
     void testValidEmail() {
         String validEmail = "john@gmx.de";
         user.setEmail(validEmail);
         assertEquals(validEmail, user.getEmail());
     }
+
     @Test
     void testEmailSpace() {
         String invalidEmail = "  john@gmx.de  ";
@@ -65,7 +67,7 @@ class UserTest {
         assertEquals(email,user.getEmail());
     }
 
-    //******************TestPass********************
+    //TestPass
     @Test
     void testValidPass(){
         String validPass = "!Qwerty23456";

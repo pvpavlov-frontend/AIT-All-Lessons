@@ -1,8 +1,6 @@
 package ait.user.model;
 
 public class User {
-
-//    В проекте User из домашней работы, исправить валидацию емейла так, чтобы валидный емейл с пробелами вначале и в конце исправлялся и проходил валидаци. Скорректировать тест
     private String email;
     private String password;
 
@@ -17,9 +15,8 @@ public class User {
     }
 
     public void setEmail(String email) {
-//      email = email.trim();
         if (emailIsValid(email)) {
-            this.email = email.trim();
+            this.email = email;
         } else {
             System.out.println(email + " is not valid");
         }
