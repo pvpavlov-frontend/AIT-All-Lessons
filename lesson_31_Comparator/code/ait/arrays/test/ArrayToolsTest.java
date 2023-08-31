@@ -6,8 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Comparator;
 
 class ArrayToolsTest {
     Integer[] arrNum;
@@ -77,7 +76,7 @@ class ArrayToolsTest {
     void testSortSoldiersByName() {
         System.out.println("*** testSortSoldiersByName ***");
 //        ArrayTools.bubbleSort(soldiers, (s1, s2) -> s1.getName().compareTo(s2.getName()));
-        Arrays.sort(soldiers, (s1, s2) -> s1.getName().compareTo(s2.getName()));
+        Arrays.sort(soldiers, Comparator.comparing(Soldier::getName));
         ArrayTools.printArray(soldiers);
     }
 
@@ -85,24 +84,14 @@ class ArrayToolsTest {
     void testSortSoldiersByProfile() {
         System.out.println("*** testSortSoldiersByProfile ***");
 //        ArrayTools.bubbleSort(soldiers, (s1, s2) -> s1.getProfile() - s2.getProfile());
-        Arrays.sort(soldiers, (s1, s2) -> s1.getProfile() - s2.getProfile());
+        Arrays.sort(soldiers, Comparator.comparingInt(Soldier::getProfile));
         ArrayTools.printArray(soldiers);
     }
 
     @Test
     void testSortSoldiersByWeight() {
         System.out.println("*** testSortSoldiersByWeight ***");
-//        ArrayTools.bubbleSort(soldiers, (s1, s2) -> {
-//            double res = s1.getWeight() - s2.getWeight();
-//            if (res < 0) {
-//                return -1;
-//            }
-//            if (res > 0) {
-//                return 1;
-//            }
-//            return 0;
-//        });
-        Arrays.sort(soldiers, (s1, s2) -> {
+        ArrayTools.bubbleSort(soldiers, (s1, s2) -> {
             double res = s1.getWeight() - s2.getWeight();
             if (res < 0) {
                 return -1;
@@ -112,6 +101,16 @@ class ArrayToolsTest {
             }
             return 0;
         });
+//        Arrays.sort(soldiers, (s1, s2) -> {
+//            double res = s1.getWeight() - s2.getWeight();
+//            if (res < 0) {
+//                return -1;
+//            }
+//            if (res > 0) {
+//                return 1;
+//            }
+//            return 0;
+//        });
         ArrayTools.printArray(soldiers);
     }
 
@@ -119,7 +118,7 @@ class ArrayToolsTest {
     void testSortStringByLength() {
         System.out.println("*** testSortStringByLength ***   ");
 //      ArrayTools.bubbleSort(arrStr, (s1, s2) -> s1.length() - s2.length());
-        Arrays.sort(arrStr, (s1, s2) -> s1.length() - s2.length());
+        Arrays.sort(arrStr, Comparator.comparingInt(String::length));
         ArrayTools.printArray(arrStr);
     }
 }
