@@ -1,7 +1,7 @@
 package ait.employee.test;
 
 import ait.employee.dao.Company;
-import ait.employee.dao.CompanyImpl;
+import ait.employee.dao.CompanyArraysImpl;
 import ait.employee.model.Employee;
 import ait.employee.model.Manager;
 import ait.employee.model.SalesManager;
@@ -17,7 +17,7 @@ class CompanyTest {
 
     @BeforeEach
     void setUp() {
-        company = new CompanyImpl(5);
+        company = new CompanyArraysImpl(5);
         employees = new Employee[4];
         employees[0] = new Manager(1000, "John", "Smith", 160, 3000, 5);
         employees[1] = new WageEmployee(2000, "Mary", "Smith", 160, 15);

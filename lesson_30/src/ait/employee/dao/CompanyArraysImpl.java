@@ -3,13 +3,14 @@ package ait.employee.dao;
 import ait.employee.model.Employee;
 import ait.employee.model.SalesManager;
 
+import java.util.Arrays;
 import java.util.function.Predicate;
 
-public class CompanyImpl implements Company {
+public class CompanyArraysImpl implements Company {
     private Employee[] employees;
     private int size;
 
-    public CompanyImpl(int capacity) {
+    public CompanyArraysImpl(int capacity) {
         employees = new Employee[capacity];
     }
 
@@ -27,8 +28,8 @@ public class CompanyImpl implements Company {
         for (int i = 0; i < size; i++) {
             if (employees[i].getId() == id) {
                 Employee victim = employees[i];
-                employees[i] = employees[--size];
-                employees[size] = null;
+                System.arraycopy(employees, i + 1, employees, i, size - i - 1);
+                employees[--size] = null;
                 return victim;
             }
         }
@@ -99,7 +100,9 @@ public class CompanyImpl implements Company {
         };
         return findEmployeesByPredicate(predicate);
     }
-
+//    Задача 1
+//
+//    В классе CompanyArraysImpl из классной работы, изменить метод findEmployeesByPredicate так, чтобы был только один цикл. Используйте метод Arrays.copyOf.
     private Employee[] findEmployeesByPredicate(Predicate<Employee> predicate){
         int count = 0;
         for (int i = 0; i < size; i++) {
@@ -107,6 +110,16 @@ public class CompanyImpl implements Company {
                 count++;
             }
         }
+//        Employee[] res = Arrays.copyOf(employees, size);
+//        for (int i = 0; i < res.length; i++) {
+//            System.out.println(res[i]);
+//        }
+//        Employee[] resCopy = Arrays.copyOf(res, count);
+//
+//
+//        for (int i = 0; i < resCopy.length; i++) {
+//            System.out.println(resCopy[i]);
+//        }
         Employee[] res = new Employee[count];
         for (int i = 0, j = 0; j < res.length; i++) {
             if (predicate.test(employees[i])) {
@@ -114,6 +127,7 @@ public class CompanyImpl implements Company {
                 j++;
             }
         }
+//        return resCopy;
         return res;
     }
 }
