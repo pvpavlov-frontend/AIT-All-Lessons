@@ -27,6 +27,7 @@ public class Main {
 
         System.out.println(yesOrNoNumber(n1, n2));
         listWithoutElementsGreaterNumber(n3, 2);
+        listWithoutElementsGreaterNumberIterator(n3, 2);
 
     }
 
@@ -34,7 +35,7 @@ public class Main {
         List<String> res = new ArrayList<>();
 
         for (int i = 0; i < list1.size(); i++) {
-            if (list1.get(i) == list2.get(i)) {
+            if (list1.get(i).equals(list2.get(i))) {
                 res.add("Yes");
             } else {
                 res.add("No");
@@ -43,17 +44,27 @@ public class Main {
         return res;
     }
     public static List<Integer> listWithoutElementsGreaterNumber( List<Integer> l1, int num){
-        System.out.println(l1);
-        int index = 0;
-        List<Integer> result = new ArrayList<>();
-        Collections.sort(l1);
-        System.out.println(l1);
-        for (int i = 0; i < l1.size(); i++) {
-            if (l1.get(i) <= num) {
-                result.add(l1.get(i));
+//        List<Integer> result = new ArrayList<>();
+//        for (Integer i:l1 ) {
+//            if (i <= num) {
+//                result.add(i);
+//            }
+//        }
+        List<Integer> resArrNum = new ArrayList<>();
+        l1.forEach(n ->{
+            if (n <= num){
+                resArrNum.add(n);
+            }
+        });
+        return resArrNum;
+    }
+    public static Iterator<Integer> listWithoutElementsGreaterNumberIterator( List<Integer> l1, int num){
+        Iterator<Integer> iterator = l1.iterator();
+        while(iterator.hasNext()){
+            if (iterator.next() >= num){
+                iterator.remove();
             }
         }
-        System.out.println("result = "+result);
-        return result;
+        return iterator;
     }
 }

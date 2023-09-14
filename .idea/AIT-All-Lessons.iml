@@ -32,6 +32,11 @@
       <sourceFolder url="file://$MODULE_DIR$/lesson_32/code" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lesson_34_Arrays/code" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lesson_35/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_36/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_37/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_40/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_41/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_42/code" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
