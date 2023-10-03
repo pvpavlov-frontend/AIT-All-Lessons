@@ -33,11 +33,11 @@ public class Main {
         brackets.put('}', '{');
 
         Deque<Character> stack = new LinkedList<>();
-        for (Character c: brecketStr.toCharArray()) {
-            if (brackets.containsValue(c)){
+        for (Character c : brecketStr.toCharArray()) {
+            if (brackets.containsValue(c)) {
                 stack.push(c);
-            } else if (brackets.containsKey(c)){
-                if (stack.isEmpty() || stack.pop() != brackets.get(c)){
+            } else if (brackets.containsKey(c)) {
+                if (stack.isEmpty() || stack.pop() != brackets.get(c)) {
                     return false;
                 }
             }
