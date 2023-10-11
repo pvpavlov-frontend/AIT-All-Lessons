@@ -47,6 +47,14 @@
       <sourceFolder url="file://$MODULE_DIR$/lesson_53/code" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lesson_54/code" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lesson_55/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_56/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_57/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_57/code/demo20231005_3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_57/code/homework_57" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_58/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_59/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lesson_60/code" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson_55/code/dz20231002_1/src" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
