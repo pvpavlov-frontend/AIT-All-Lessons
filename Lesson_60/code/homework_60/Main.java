@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         List <Alcohol> alcohol = List.of(
-                new Alcohol("Vodka", 40.0, 6.40),
+                new Alcohol("Vodka", 40.0, 30.40),
                 new Alcohol("Whiskey", 42.0, 60.10),
                 new Alcohol("Wine", 12.0, 3.60),
-                new Alcohol("Vodka", 40.0, 6.40),
+                new Alcohol("Vodka", 40.0, 30.40),
                 new Alcohol("Beer", 5.5, 1.80),
                 new Alcohol("Beer", 5.5, 1.80),
                 new Alcohol("Gin", 38, 16.40)
@@ -19,6 +19,7 @@ public class Main {
 //        Получите LinkedList из топ 3 самых дорогих товаров.
         LinkedList<Alcohol> alcoholLinkedList = alcohol.stream()
                 .sorted((a, b) -> Double.compare(b.getPrice(), a.getPrice()))
+                .distinct()
                 .limit(3)
                 .collect(
                         Collectors
@@ -34,7 +35,7 @@ public class Main {
         System.out.println("Задание 3 ⭐⭐");
 //        Задание 3 ⭐⭐
 //        Создайте Set из исходного листа.
-        Set<Alcohol> uniqueListOfAlcohol = new HashSet<Alcohol>(new HashSet<>(alcohol));;
+        Set<Alcohol> uniqueListOfAlcohol = new HashSet<>(alcohol);
 
 
         System.out.println(uniqueListOfAlcohol);
@@ -54,7 +55,7 @@ public class Main {
 //        названия товаров, а значениям будет крепость.
 //
         Map<String, Set<Double>> alcoholMap1 = alcohol.stream()
-
+                .distinct()
                 .collect(Collectors.groupingBy(Alcohol::getTitle,
                         Collectors.mapping(Alcohol::getStrength,
                                 Collectors.toSet())));

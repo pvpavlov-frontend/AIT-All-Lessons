@@ -1,8 +1,8 @@
-package homework_60;
+package homework_10_11.src;
 
 import java.util.Objects;
 
-public class Alcohol {
+public class Alcohol implements Comparable<Alcohol> {
     private String title;
     private double strength;
     private double price;
@@ -13,6 +13,19 @@ public class Alcohol {
         this.price = price;
     }
 
+    @Override
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Alcohol alcohol = (Alcohol) o;
+        return Double.compare(alcohol.strength, strength) == 0 && Double.compare(alcohol.price, price) == 0 && Objects.equals(title, alcohol.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, strength, price);
+    }
     public String getTitle() {
         return title;
     }
@@ -47,15 +60,7 @@ public class Alcohol {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Alcohol alcohol = (Alcohol) o;
-        return Double.compare(alcohol.strength, strength) == 0 && Double.compare(alcohol.price, price) == 0 && Objects.equals(title, alcohol.title);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(title, strength, price);
+    public int compareTo(Alcohol o) {
+        return Double.compare(this.price, o.price);
     }
 }
